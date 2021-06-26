@@ -3,6 +3,16 @@
   align-items: stretch;
   height: 100vh;
 
+  &.dark {
+    background: #18191A;
+    color: #f8f8f8;
+
+    input {
+      background: #242526 !important;
+      color: #f8f8f8 !important;
+    }
+  }
+
   aside {
     flex: 7;
 

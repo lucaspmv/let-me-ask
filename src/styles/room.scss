@@ -1,4 +1,27 @@
 #page-room {
+  min-height: 100vh;
+
+  &.dark {
+    background: #18191A;
+
+    header {
+      border-bottom: 1px solid #242526;
+    }
+
+    textarea, .question, .room-code, .outlined {
+      background: #242526;
+
+      &.answered {
+        background: #1c1d1f!important;
+      }
+
+    }
+
+    h1, textarea, span, p {
+      color: #FFF !important;
+    }
+  }
+
   header {
     padding: 2.4rem;
     border-bottom: 1px solid #e2e2e2;

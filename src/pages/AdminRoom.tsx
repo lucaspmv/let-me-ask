@@ -8,8 +8,11 @@ import answerImg from '../assets/images/answer.svg';
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
 import { Question } from '../components/Question';
+import { ThemeButton } from '../components/ThemeButton';
 
 import { useRoom } from '../hooks/useRoom';
+import { useTheme } from '../hooks/useTheme';
+
 import { database } from '../services/firebase';
 
 import '../styles/room.scss';
@@ -22,6 +25,8 @@ export function AdminRoom() {
   const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
+
+  const { theme } = useTheme();
 
   const { title, questions } = useRoom(roomId);
 
@@ -58,7 +63,7 @@ export function AdminRoom() {
   }
 
   return (
-    <div id="page-room">
+    <div id="page-room" className={theme}>
       <header>
         <div className="content">
           <div>
@@ -75,6 +80,7 @@ export function AdminRoom() {
         <div className="room-title">
           <h1>Sala {title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+          <ThemeButton />
         </div>
 
         <div className="question-list">
