@@ -8,7 +8,7 @@ import googleIconImg from '../../assets/images/google-icon.svg';
 import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 
-import './styles.scss';
+import '../../styles/home.scss';
 import { database } from '../../services/firebase';
 
 export function Home() {

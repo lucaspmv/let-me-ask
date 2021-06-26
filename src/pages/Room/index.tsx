@@ -10,7 +10,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useRoom } from '../../hooks/useRoom';
 import { database } from '../../services/firebase';
 
-import './styles.scss';
+import '../../styles/room.scss';
 
 type RoomParams = {
   id: string;
@@ -73,7 +73,7 @@ export function Room() {
 
       <main className="content">
         <div className="room-title">
-          <h1>Sala {title}</h1>
+          <h1><span>Sala </span>{title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
@@ -82,6 +82,7 @@ export function Room() {
             placeholder="O que você quer perguntar?"
             onChange={event => setNewQuestion(event.target.value)}
             value={newQuestion}
+            maxLength={300}
           />
 
           <div className="form-footer">

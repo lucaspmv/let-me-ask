@@ -13,7 +13,7 @@ import { Question } from '../../components/Question';
 import { useRoom } from '../../hooks/useRoom';
 import { database } from '../../services/firebase';
 
-import './styles.scss';
+import '../../styles/room.scss';
 
 type RoomParams = {
   id: string;
@@ -61,7 +61,9 @@ export function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask" />
+          <div>
+            <img src={logoImg} alt="Letmeask" />
+          </div>
           <div>
             <RoomCode code={roomId} />
             <Button onClick={handleEndRoom} isOutlined>Encerrar sala</Button>

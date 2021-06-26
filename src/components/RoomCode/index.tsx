@@ -12,8 +12,8 @@ export function RoomCode(props: RoomCodeProps) {
   }
 
   return (
-    <button className="room-code" onClick={copyRoomCodeToClipboard}>
-      <div>
+    <button className="room-code" >
+      <div onClick={copyRoomCodeToClipboard}>
         <img src={copyImg} alt="Copy room code" />
       </div>
       <span>Sala #{props.code}</span>

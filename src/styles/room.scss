@@ -1,6 +1,6 @@
 #page-room {
   header {
-    padding: 24px;
+    padding: 2.4rem;
     border-bottom: 1px solid #e2e2e2;
 
     .content {
@@ -10,8 +10,16 @@
       justify-content: space-between;
       align-items: center;
 
-      > img {
+      img {
         max-height: 45px;
+      }
+
+      > div {
+        > img {
+          @media screen and (max-width: 375px) {
+            display: none;
+          }
+        }
       }
 
       > div {
@@ -26,9 +34,10 @@
   }
 
   main {
-    max-width: 800px;
+    max-width: 824px;
     margin: 0 auto;
-
+    padding: 0 2.4rem;
+    
     .room-title {
       margin: 32px 0 24px;
       display: flex;
@@ -36,18 +45,36 @@
 
       h1 {
         font-family: 'Poppins', sans-serif;
-        font-size: 24px;
+        font-size: 2.4rem;
         color: #29292e;
+
+        @media screen and (max-width: 450px) {
+          span {
+            display: none;
+          }
+        }
       }
 
-      span {
+      > span {
         margin-left: 16px;
         background: #e559f9;
         border-radius: 9999px;
         padding: 8px 16px;
         color: #FFF;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 1.4rem;
+
+        @media screen and (max-width: 375px) {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 450px) {
+        justify-content: space-between;
+
+        span {
+          margin-left: 0;
+        }
       }
     }
 
@@ -61,6 +88,7 @@
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
         resize: vertical;
         min-height: 130px;
+        max-height: 200px;
       }
 
       .form-footer {
@@ -83,12 +111,16 @@
             margin-left: 8px;
             color: #29292e;
             font-weight: 500;
-            font-size: 14px;
+            font-size: 1.4rem;
+
+            @media screen and (max-width: 450px) {
+              display: none;
+            }
           }
         }
 
         > span {
-          font-size: 14px;
+          font-size: 1.4rem;
           color: #737380;
           font-weight: 500;
 
@@ -97,7 +129,7 @@
             border: 0;
             color: #835AFD;
             text-decoration: underline;
-            font-size: 14px;
+            font-size: 1.4rem;
             font-weight: 500;
             cursor: pointer;
           }
